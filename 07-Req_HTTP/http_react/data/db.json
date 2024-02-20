@@ -1,0 +1,57 @@
+{
+  "carros": [
+    {
+      "marca": "Fiat",
+      "modelo": "Uno",
+      "ano": 2010
+    },
+    {
+      "marca": "Fiat",
+      "modelo": "Palio",
+      "ano": 2012
+    },
+    {
+      "marca": "Fiat",
+      "modelo": "Siena",
+      "ano": 2014
+    },
+    {
+      "marca": "Fiat",
+      "modelo": "Strada",
+      "ano": 2016
+    },
+    {
+      "marca": "Fiat",
+      "modelo": "Toro",
+      "ano": 2018
+    },
+    {
+      "marca": "Fiat",
+      "modelo": "Mobi",
+      "ano": 2020
+    },
+    {
+      "marca": "Fiat",
+      "modelo": "Argo",
+      "ano": 2022
+    },
+    {
+      "id": "eb57",
+      "marca": "Fiat",
+      "modelo": "Linea",
+      "ano": "2010"
+    },
+    {
+      "id": "d638",
+      "marca": "Fiat",
+      "modelo": "Bravo",
+      "ano": "2012"
+    },
+    {
+      "id": "1062",
+      "marca": "Fiat",
+      "modelo": "Doblo",
+      "ano": "2015"
+    }
+  ]
+}
