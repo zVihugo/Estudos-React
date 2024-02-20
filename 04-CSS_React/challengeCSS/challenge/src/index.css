@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana;
+  text-align: center;
+}
+.car_conteiner{
+  display: flex;
+  justify-content:center;
+  margin-top: 20px;
+}

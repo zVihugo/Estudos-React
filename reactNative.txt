@@ -1,0 +1,267 @@
+O que é React?
+	- É uma biblioteca javaScript para desenvolvimento de aplicações front-end
+	- Estas aplicações são chamadas de SPA (Single Page Application)
+	- Framework é quando temos maneiras de seguir uma aplicação (Se não seguir, não da certo)
+	- Já na biblioteca, temos um setup inicial e estamos mais livres
+	- A arquitetura do React é baseada em componentes
+	- Pode ser inserido em uma aplicação ou podemos criar a aplicação apenas com React
+	- é mantido pelo Facebook
+
+O que é Node.JS?
+	- O Node.js é uma runtime de JavaScript
+	- Biblioteca utilizada por um compilador durante a execução do programa
+	- Que está construída na V8 engine (Escrita em C++) da google
+	- Possibilitando criar softwares em JS no lado do servidor 
+
+O que é npm?
+	- O npm é um gerenciador de pacotes do Node
+	- Vamos poder utilizar bibliotecas de terceiros, baixando elas pelo npm
+	- E também executar determinados scripts no nosso programa
+	- E também executar determinados scripts no nosso programa
+	- Dificilmente um software em Node.js não utiliza o npm	
+	- Os módulos externos ficam numa pasta chamada node_modules
+	- Ela deve ser descartável, ou seja, a cada instalação do projeto baixamos todos os pacotes novamente
+
+Criar projetos
+	- Maneira antiga:
+		- npx create-react-app "Nome do projeto"
+		- npm start
+	- Maneira com o Vite
+		- npm create vite@latest
+
+Estrutura Base
+	- node_modules: Onde as dependências do projeto ficam
+	- Public: Assests estáticos e HTML de inicialização
+	- src: Onde vamos programas nossas apps
+	- src/index.js: Arquivo de inicialização do React
+	- src/App.js: Componente principal da aplicação
+
+Criando componentes
+	- Na maioria dos projetos os componentes ficam em uma pasta chamada components, que devemos criar
+	- Geralmente são nomeados com a camel case: FirstComponent.js
+	- No arquivo criamos uma função, que contém o código deste componente (a lógica e o template)
+	- E também precisamos exporta esta função, para reutilizá-lo
+	- Vamos ver na prática
+
+Exportando componentes:
+	- Primeiro, criamos uma pasta, components dentro de src
+	- Depois colocamos o escopo do componente (const "nomeComponente", e exportamos da seguinte maneira
+	- export default "Nome do componente"
+
+Importando componente
+	-  A importação é a maneira que temos para utilizar o componente
+	-  Utilizamos a sintaxe = import X from "./componentes/x" onde x é o nome do componente
+	-  Para colocar o componente importado em outro componente, precisamos colocá-lo em forma de tag: <FirtsComponent/>
+
+Conhecendo o jsx:
+	- É o html do React
+	- Onde vamos declarar as tags de HTML que serão exibidas no navegador
+	- Ficam no return do componente
+	- Temos algumas diferenças do HTML, por exemplo: class será o className
+	- Isso se dá pelas instruções semelhantes de JS e HTML, pois o JSX é JavaScritp, então algumas terão nomes diferentes
+	- O jsx pode ter apenas um elemento PAI
+
+Comentário no componente
+	- Podemos inserir comentários de duas maneiras no componente
+	- Na parte da função, onde é executada a lógica, a sintaxe é: // "Alguma frase"
+	- E também no JSX: {/*Algum comentário*/}
+	- As chaves nos permitem executar sentenças em JavaScript, veremos isso mais adiante
+	- Vamos testar os comentários
+	
+Template Expressions
+	- Template expressions é o recurso que nos permite executar JS no JSX e também interpolar váriaves
+	- A sintexa é: {algumCódigoemJS}, lembre se usar ``
+
+Hierarquia de componentes
+	- Os componentes que criamos, podem ser retulizados em vários componentes
+	- E ainda componentes podem formar uma hierarquia, sendo importados um dentro do outro
+
+Evento de click
+	- Os eventos para o front-end são essenciais
+	- Em várias situações vamos precisar do click, como ao enviar formulários
+	- No react os eventos já estão 'prontos', podemos utilizar onClick para ativar uma função ao clicar em um elemento
+	- Esta função é criado na própia função do componente
+	- As funções geralmente tem o padrão handleAlgumaCoisa
+
+Funções no evento:
+	- Quando as funções são simples, podemos realizar a lógica no própio evento
+	- Isso torna nosso código mais 'complicado", por atrelar lógico com html
+	- Mas em algumas situações é aplicável
+	- Vamos ver na prática
+
+Funções de renderização
+	- Podemos criar funções que retornem JSX
+	- Isso serve para criar situações que dependem de outras
+
+Imagens no React
+	- As imagens públicas do nosso projeto podem ficar na pasta public
+	- De lá elas podem ser chamadas pelas tag img diretamente pelo /nome.jpg
+	- Pois a pasta public fica linkada no src das imagens
+
+
+Imagens em asset
+	- A pasta public pode ser utilizada para colocar imagens, como fizemos na aula passada
+	- Mas um padrão bem utilizada para imagens do projetos, é colocar numa pasta chamada assets
+	- Em assest é preciso importas as imagens, e o src é dinâmico com o nome da importação
+
+O que são Hooks?
+	- Recursos do React que tem diversas funções
+	- Como: Guardar e alterar o estado de algum dado na nossa aplicação
+	- Todos os hooks começam com use, por exemplo: useState
+	- Podemos criar o nosso, custom Hook
+	- os Hooks precisam ser importados
+	- Geralmente são uteis em todas as aplicações, utilizaremos diversos ao longo do curso
+
+useStateHook
+	- O hook de useState é um dos mais utilizados
+	- utilizamos para gerenciar o estado de algum dado, variáveis não funcionam corretamente, o componente não re-renderiza
+	- Para guardar o dado definimios o nome da variavel e para alterar vamos utilizar o setNome
+
+Renderização de lista
+	- Uma outra ação bem comun é renderizar listas de dados no templates
+	- dados do tipo array
+	- método map para nos auxiliar
+	- além dos dados podemos inserir jsx em cada iteração
+
+A propiedade Key
+	- Iterar listas sem a propiedade key nos gera um warning
+	- O react precisa de uma chave única em cada um dos itens iterados
+	- Isso serve para ajudá-lo na renderização do componente
+	- Geramente temos um array de objetos e podemos colocar key com alguma chave única
+Previous State
+	- é um recuso que nos permite pegar o dado em seu valor original dentro de um set de dado
+	- Isso é muito utilizado para modificar listas, valor antigo para novo
+	
+Renderização condicional
+	- Renderização condicional é quando imprimimos uma parte do template, baseado em uma condigção
+	- checagem com IF
+
+Adicionando um else
+	- Podemos também realizar um if/else no JSX
+	- Aqui devemos utilizar o if ternário
+	- Onde temos a sintaxe: condição ? blocl1:bloco2
+
+Props
+	- Props é outro recurso fundamental do React
+	- Nos permite passar valores de um componente pai para um componente filho
+	- Isso será muito útil quando os dados forem carregados via banco de dados por exemplo
+	- As props vem em um objeto no argumento da função do componente
+
+Desestruturando props
+	- É super comum passar mais de uma prop em um componente
+	- Para facilitar isso o React nos permite desestruturar as propiedades que chegam com o recurso destructing
+	- se temos duas props: name e age
+	- Podemos fazer assim function MyComponent({name, age})
+	- Agora não precisamos mais utilizar props.algumaCoisa
+	- Vamos ver na prática^
+
+Reutilização de componentes
+	- Com props a reutilização de componentes começa a fazer muito sentido
+	- Se temos os dados de 1000 carros por exemplo, podemos reaproveitar o nosso CarDetaisl 1000 vezes
+	- Isso torna nosso código mais padronizado, facilitando a manutenção
+
+Reutilização com loop
+	- Os arrays de dados podem ter muitos itens também
+	- Então o correto é utilizar uma estrutura de loop (map) para a sua exibição
+ 	- E com isso conseguimos conciliar os três conceitos: renderização de listas, reaproveitamento de componentes e props
+	- Vamos ver na prática
+	
+React Fragments
+	- Os react fragments são interessantes para quando precisamos ter mais de um elemento pai em um componente
+	- Criar uma tag vazia: <> </>
+	- E ela serve como elemento pai, não alterando a estrutura do HTML com uma div, por exemplo
+	- Vamos ver na prática
+
+Children Pop
+	- Children prop é um recurso utilizado para quando um componente precisar ter jsx dentro dele
+	- Porém este jsx vem do componente pai
+	- Então o componente age como um container, abraçando estes elementos
+	- E children é considerada uma prop do componente
+	- Vamos ver na prática
+
+Funções em props
+	- As funções podem ser passadas para as props normalmente
+	- Basta criar a função no componente pai e enviar como prop para o componente
+	- No componente filho ela pode ser ativada por um evento, por exemplo
+
+Elevação de state
+	- Elevação de state ou state lift é quando um valor é elevado do componente filho para o componente pai
+	- Geralmente temos um componente que usa o state e outro que o altera
+	- Então precisamos passar a alteração para o componente pai, e este passa para o componente que usa o state
+
+CSS global
+	- O CSS global é utilizado para estilizar diversos elementos em comum ou fazer um reset no CSS
+	- utilizamos o arquivo index.css 
+	- pasta src
+
+CSS de componente
+	- O css de componente é utilizado para um componente em especifico
+	- Geralmente é criado uma arquivo com o mesmo nome do componente e este é importado no componente
+
+Inline Syle
+	- O inline style do React é igual o do CSS
+	- Por meio do atributo style conseguimos aplicar regras diretamente em um elemento
+	- Devemos optar por outras maneiras de CSS, o inline pode dificultar a manutenção ou deixar o código imprevisível em algumas situações
+
+Inline style dinâmico
+	- O css dinâmico inline aplica estilo baseado em uma condicional
+	- Vamos inserir no atributo um if ternário
+	- Dependendo da condição podemos mudar que regras de estilo um elemento recebe
+
+Classes dinâmicas no CSS
+	- Podemos também aplicar lógica para mudar as classe de CSS de um elemento
+	- Também utilizaremos o if ternário
+	- Essa abordagem é mais interessante que o CSS inline
+	- Pois as classes estarão isoladas em arquivos CSS
+
+CSS Modules
+	- O CSS Modules é um recurso de CSS scoped
+	- Ou seja, ele vai ser excluisov do componente
+	- O nome do arquivo é: Componente.module.css
+	- Precisamos importá-lo também no componente
+
+Formulários e React
+	- Tag form para formulários
+	- As labels dos inputs contém o atributo htmlFor, que deve ter o valor do name do input
+	- Não utilizamos action, pois o processamento será feito de forma assincrona
+
+Label envolvendo o input
+	- Em react um padrão comum é a tag label envolvendo o input
+	- Isso faz com que o atributo for se torne opcional
+	- Simplificando nossa estrutura HTML, sem perder a semântica
+
+Manipulação de valores
+	- Para manipular os valores dos inputs vamos utilizar o hook useState
+	- Ou seja, podemos armazenar na variável e utilizar o set para alterar o valor
+	- Vamos criar uma função para alterar o valor no evento onChange
+	- Deixando nosso código fácil de trabalhar nas próximas etapas: como envio dos dados para BD e validação	
+	
+
+Simplificando a manipulação
+	- Quando temos vários inputs podemos realizr a manipulação de forma mais simples
+	- Basicamente criamos uma função inline no onChange
+	- Ela vai alterar o valor do state com o método set, da mesma forma que a função isolada
+
+Envio de form
+	- Para enviar um form vamos utilizar o evento onSubmit
+	- Ele chamará uma função, e nesta devemos lembrar de para a submissão com o preventDefault
+	- Validamos, enviamos e reset de forma e outra ações
+
+Controlled inputs
+	- Controlled inputs é um recurso que nos permite mais flexiblidade nos forms de React
+	- precisamos apenas igualar o valor ao state
+	- Um uso muito comum: Formulários de edição, que os dados vem do back-end, conseguiremos preencer o input mais facilmente
+
+Limpando formulários
+	- Com o controller inputs limpar o form será fácil
+	- Basta atribuir um valor de ums string vazia aos states e pronto
+	- Isso será feito após o envio 
+
+Input de Textarea
+	- O textarea pode ser considerado um input de texto normal
+	- Utilizaremos o value para alterar o state inicial
+	- E o evento onChange para modificar o valor do state
+
+Input de Select
+	- O se
+	
